@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Velvet Room · Private Fine Dining</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-logo" onclick="showPage('home')">
+      THE VELVET ROOM
+      <small>PRIVATE FINE DINING</small>
+    </div>
+    <ul class="nav-links mb-0">
+      <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="showPage('themes')" id="nav-themes">Menu</a></li>
+      <li><a onclick="showPage('appointment')" id="nav-appointment">Reserve</a></li>
+      <li><a onclick="showPage('admin')" id="nav-admin">Admin</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============================
+       PAGE 1: HOME
+       ============================ -->
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <div class="hero-tag">EST. 2008 · KUALA LUMPUR</div>
+        <h1>Where Every<br/><em>Dinner</em> Becomes<br/>a Memory</h1>
+        <p class="hero-desc">
+          The Velvet Room offers two exclusive private dining suites for the most discerning guests.
+          From intimate anniversaries to high-stakes corporate affairs — every detail is curated to perfection.
+        </p>
+        <div class="hero-cta">
+          <button class="btn-gold" onclick="showPage('appointment')">Make a Reservation</button>
+          <button class="btn-outline-gold" onclick="showPage('themes')">View Tasting Menus</button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-lbl">Years of Excellence</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">6</div>
+            <div class="hero-stat-lbl">Signature Menus</div>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">2</div>
+            <div class="hero-stat-lbl">Private Suites</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+  <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80"
+    alt="Fine Dining"
+    style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0.4;" />
+  <div style="position:relative;z-index:2;text-align:center;padding:40px;">
+    <div class="logo-mark">V</div>
+    <p>PRIVATE FINE DINING</p>
+  </div>
+</div>
+    </section>
+
+    <section class="features-strip">
+      <div class="row g-0">
+        <div class="col-6 col-md-3"><div class="feat">
+          <div class="feat-icon"><i class="bi bi-stars"></i></div>
+          <h5>Fine Cuisine</h5>
+          <p>Our Executive Chef brings 20 years of European culinary mastery to every plate</p>
+        </div></div>
+        <div class="col-6 col-md-3"><div class="feat">
+          <div class="feat-icon"><i class="bi bi-door-open"></i></div>
+          <h5>Private Suites</h5>
+          <p>Two fully-enclosed private dining rooms for absolute exclusivity</p>
+        </div></div>
+        <div class="col-6 col-md-3"><div class="feat">
+          <div class="feat-icon"><i class="bi bi-journal-richtext"></i></div>
+          <h5>Set Menus</h5>
+          <p>Thoughtfully crafted tasting menus that showcase the finest seasonal ingredients</p>
+        </div></div>
+        <div class="col-6 col-md-3"><div class="feat">
+          <div class="feat-icon"><i class="bi bi-person-check"></i></div>
+          <h5>Dedicated Host</h5>
+          <p>A personal concierge attends to every request from booking to dessert</p>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="rooms-section">
+      <div class="row mb-5">
+        <div class="col">
+          <div class="eyebrow">Our Private Suites</div>
+          <div class="section-title">Two Rooms, <em>One Standard</em></div>
+          <div class="gold-rule"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="room-card">
+            <div class="room-num">01</div>
+            <div class="room-img" style="background:none;border:none;padding:0;height:220px;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80"
+                alt="The Crimson Suite"
+                style="width:100%;height:100%;object-fit:cover;display:block;" />
+            </div>
+            <h4>The Crimson Suite · Room 1</h4>
+            <p>Spacious and grand, accommodating larger parties with ease. Features a built-in wine display, private AV system, and floor-to-ceiling drapes.</p>
+            <div class="room-cap"><i class="bi bi-people"></i> Up to 20 guests</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="room-card">
+            <div class="room-num">02</div>
+            <div class="room-img" style="background:none;border:none;padding:0;height:220px;overflow:hidden;">
+              <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=700&q=80"
+                alt="The Pearl Alcove"
+                style="width:100%;height:100%;object-fit:cover;display:block;" />
+            </div>
+            <h4>The Pearl Alcove · Room 2</h4>
+            <p>An intimate haven designed for romance and close-knit gatherings. Ambient lighting, fresh florals, and bespoke table settings included.</p>
+            <div class="room-cap"><i class="bi bi-people"></i> Up to 10 guests</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="eyebrow">Your Table Awaits</div>
+      <div class="section-title">An <em>Unforgettable</em> Evening Begins Here</div>
+      <div class="gold-rule" style="margin:20px auto 36px;"></div>
+      <button class="btn-gold me-3" onclick="showPage('appointment')">Reserve a Table</button>
+      <button class="btn-outline-gold" onclick="showPage('themes')">Explore Menus</button>
+    </section>
+
+    <footer>
+      <div class="footer-logo">THE VELVET ROOM</div>
+      <p>© 2025 The Velvet Room · Private Fine Dining · Kuala Lumpur</p>
+    </footer>
+  </div>
+
+  <!-- ============================
+       PAGE 2: TASTING MENUS
+       ============================ -->
+  <div id="page-themes" class="page">
+    <div class="themes-header">
+      <div class="eyebrow">Curated Tasting Menus</div>
+      <div class="section-title">Six <em>Signature</em> Experiences</div>
+      <div class="gold-rule" style="margin:16px auto 20px;"></div>
+      <p>Our fixed set menus are designed to reduce waste and ensure every course is executed at its finest. Choose a theme — let us handle the rest.</p>
+    </div>
+
+    <div class="themes-grid">
+      <div class="row g-4">
+
+        <!-- Menu 01 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <span class="theme-badge-v2">POPULAR</span>
+              <div class="theme-img-label">CORPORATE DINNER</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 01</span>
+                <span class="theme-price-v2">RM 388<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Executive Table</h4>
+              <p class="theme-sub-v2">Perfect for business dinners &amp; corporate entertaining</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">Starter</span> Foie gras terrine, brioche</div>
+                <div class="course-item"><span class="course-tag">Soup</span> Wild mushroom velouté</div>
+                <div class="course-item"><span class="course-tag">Main</span> Wagyu beef tenderloin</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Dark chocolate fondant</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Executive Table',388)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 02 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <div class="theme-img-label">ROMANTIC DINING</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 02</span>
+                <span class="theme-price-v2">RM 288<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Anniversary Menu</h4>
+              <p class="theme-sub-v2">Ideal for anniversaries, proposals &amp; date nights</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">Starter</span> Burrata, heirloom tomatoes</div>
+                <div class="course-item"><span class="course-tag">Soup</span> Lobster bisque</div>
+                <div class="course-item"><span class="course-tag">Main</span> Pan-seared duck breast</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Strawberry pavlova</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Anniversary Menu',288)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 03 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <div class="theme-img-label">FAMILY GATHERING</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 03</span>
+                <span class="theme-price-v2">RM 218<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Family Feast</h4>
+              <p class="theme-sub-v2">Generous shared plates for family celebrations</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">Starter</span> Charcuterie board</div>
+                <div class="course-item"><span class="course-tag">Soup</span> French onion soup</div>
+                <div class="course-item"><span class="course-tag">Main</span> Slow-roasted lamb shoulder</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Crème brûlée</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Family Feast',218)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 04 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <div class="theme-img-label">BIRTHDAY DINNER</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 04</span>
+                <span class="theme-price-v2">RM 318<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Celebration Dinner</h4>
+              <p class="theme-sub-v2">A festive menu for milestone birthdays &amp; events</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">Canapés</span> Chef's selection of 3</div>
+                <div class="course-item"><span class="course-tag">Starter</span> King prawn cocktail</div>
+                <div class="course-item"><span class="course-tag">Main</span> Black Angus ribeye</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Celebration cake tableside</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Celebration Dinner',318)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 05 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <span class="theme-badge-v2">SIGNATURE</span>
+              <div class="theme-img-label">CHEF'S PRESTIGE</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 05</span>
+                <span class="theme-price-v2">RM 688<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Prestige Tasting</h4>
+              <p class="theme-sub-v2">Our 8-course chef's table experience</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">1st</span> Oscietra caviar, blinis</div>
+                <div class="course-item"><span class="course-tag">2nd</span> Hokkaido scallop</div>
+                <div class="course-item"><span class="course-tag">Main</span> A5 Wagyu striploin</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Valrhona chocolate sphere</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Prestige Tasting',688)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Menu 06 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="theme-card-v2">
+            <div class="theme-img-v2" style="background-image:url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80')">
+              <div class="theme-img-overlay"></div>
+              <div class="theme-img-label">SUNDAY BRUNCH</div>
+            </div>
+            <div class="theme-body-v2">
+              <div class="theme-meta">
+                <span class="theme-eyebrow-v2">Menu 06</span>
+                <span class="theme-price-v2">RM 248<span>/pax</span></span>
+              </div>
+              <h4 class="theme-title-v2">The Grand Brunch</h4>
+              <p class="theme-sub-v2">A lavish late-morning spread for weekend gatherings</p>
+              <div class="theme-courses">
+                <div class="course-item"><span class="course-tag">Welcome</span> Juice &amp; pastry basket</div>
+                <div class="course-item"><span class="course-tag">Eggs</span> Benedict, Florentine or Royale</div>
+                <div class="course-item"><span class="course-tag">Board</span> Smoked salmon, gravlax</div>
+                <div class="course-item"><span class="course-tag">Dessert</span> Mignardises &amp; petits fours</div>
+              </div>
+              <button class="btn-gold select-btn" onclick="selectTheme('The Grand Brunch',248)">Select This Menu</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-logo">THE VELVET ROOM</div>
+      <p>© 2025 The Velvet Room · All prices are inclusive of service charge and applicable taxes</p>
+    </footer>
+  </div>
+
+  <!-- ============================
+       PAGE 3: RESERVATION
+       ============================ -->
+  <div id="page-appointment" class="page">
+    <div id="appt-form-wrapper">
+      <div class="appt-header">
+        <div class="eyebrow">Reserve Your Table</div>
+        <div class="section-title">Make a <em>Reservation</em></div>
+        <div class="gold-rule"></div>
+        <p style="color:var(--text-muted);font-size:0.84rem;max-width:500px;line-height:1.9;">
+          Complete the form below and our team will confirm your reservation within 24 hours.
+        </p>
+      </div>
+
+      <div class="appt-form-section">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="form-card">
+
+              <div class="form-sec-title">01 &nbsp; Guest Information</div>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Full Name <span class="req">*</span></label>
+                    <input type="text" class="form-control" id="f-name" placeholder="Your full name" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Phone Number <span class="req">*</span></label>
+                    <input type="tel" class="form-control" id="f-phone" placeholder="e.g. 012-345 6789" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-label">Email Address <span class="req">*</span></label>
+                    <input type="email" class="form-control" id="f-email" placeholder="your@email.com" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-0">
+                    <label class="form-label">Special Requests <span style="color:var(--text-muted);font-size:0.7rem;">(optional)</span></label>
+                    <textarea class="form-control" id="f-notes" rows="2" placeholder="Allergies, dietary requirements, special decorations..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-sec-title">02 &nbsp; Booking Details</div>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Date <span class="req">*</span></label>
+                    <input type="date" class="form-control" id="f-date" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">Number of Guests <span class="req">*</span></label>
+                    <select class="form-select" id="f-pax">
+                      <option value="">— Select —</option>
+                      <option value="2">2 Guests</option>
+                      <option value="3">3 Guests</option>
+                      <option value="4">4 Guests</option>
+                      <option value="5">5 Guests</option>
+                      <option value="6">6 Guests</option>
+                      <option value="8">8 Guests</option>
+                      <option value="10">10 Guests</option>
+                      <option value="12">12 Guests</option>
+                      <option value="15">15 Guests</option>
+                      <option value="20">20 Guests</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <label class="form-label">Preferred Time <span class="req">*</span></label>
+                <div class="slots" id="time-slots">
+                  <div class="slot" onclick="selectTime(this,'11:00 AM')">11:00 AM</div>
+                  <div class="slot" onclick="selectTime(this,'12:00 PM')">12:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'1:00 PM')">1:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'2:00 PM')">2:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'3:00 PM')">3:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'5:00 PM')">5:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'6:00 PM')">6:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'7:00 PM')">7:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'8:00 PM')">8:00 PM</div>
+                  <div class="slot" onclick="selectTime(this,'9:00 PM')">9:00 PM</div>
+                </div>
+              </div>
+
+              <div class="form-sec-title">03 &nbsp; Select Private Suite</div>
+              <div class="room-pick mb-4" id="room-select">
+                <div class="room-opt" onclick="selectRoom(this,'Room 1 · The Crimson Suite', 1)">
+                  <h6><i class="bi bi-door-open me-2" style="color:var(--gold)"></i>Room 1 · The Crimson Suite</h6>
+                  <p>Up to 20 guests</p>
+                  <button class="btn-outline-gold mt-2" style="padding:5px 14px;font-size:0.68rem;"
+                    onclick="event.stopPropagation(); openRoomModal(1)">
+                    <i class="bi bi-eye me-1"></i>View Room
+                  </button>
+                </div>
+                <div class="room-opt" onclick="selectRoom(this,'Room 2 · The Pearl Alcove', 2)">
+                  <h6><i class="bi bi-door-open me-2" style="color:var(--gold)"></i>Room 2 · The Pearl Alcove</h6>
+                  <p>Up to 10 guests</p>
+                  <button class="btn-outline-gold mt-2" style="padding:5px 14px;font-size:0.68rem;"
+                    onclick="event.stopPropagation(); openRoomModal(2)">
+                    <i class="bi bi-eye me-1"></i>View Room
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-sec-title">04 &nbsp; Tasting Menu Selection</div>
+              <div class="form-group mb-4">
+                <select class="form-select" id="f-theme">
+                  <option value="">— Choose a tasting menu —</option>
+                  <option value="The Executive Table|388">The Executive Table · RM 388/pax</option>
+                  <option value="The Anniversary Menu|288">The Anniversary Menu · RM 288/pax</option>
+                  <option value="The Family Feast|218">The Family Feast · RM 218/pax</option>
+                  <option value="The Celebration Dinner|318">The Celebration Dinner · RM 318/pax</option>
+                  <option value="The Prestige Tasting|688">The Prestige Tasting · RM 688/pax</option>
+                  <option value="The Grand Brunch|248">The Grand Brunch · RM 248/pax</option>
+                </select>
+              </div>
+
+              <button class="btn-gold" style="width:100%;padding:16px;" onclick="submitBooking()">
+                Confirm Reservation
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="summary">
+              <div class="summary-head"><i class="bi bi-clipboard2-check me-2"></i>Reservation Summary</div>
+              <div class="sum-row"><span class="lbl">Name</span><span class="val" id="sum-name">—</span></div>
+              <div class="sum-row"><span class="lbl">Date</span><span class="val" id="sum-date">—</span></div>
+              <div class="sum-row"><span class="lbl">Time</span><span class="val" id="sum-time">—</span></div>
+              <div class="sum-row"><span class="lbl">Pax</span><span class="val" id="sum-pax">—</span></div>
+              <div class="sum-row"><span class="lbl">Suite</span><span class="val" id="sum-room">—</span></div>
+              <div class="sum-row"><span class="lbl">Menu</span><span class="val" id="sum-theme">—</span></div>
+              <div class="sum-row sum-total" style="padding-top:16px;margin-top:8px;border-top:1px solid var(--border);">
+                <span class="lbl">Est. Total</span>
+                <span class="val" id="sum-total">—</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-screen" id="appt-success">
+      <div class="success-icon"><i class="bi bi-check-lg"></i></div>
+      <div class="section-title">Reservation <em>Submitted</em></div>
+      <div class="gold-rule" style="margin:20px auto;"></div>
+      <p style="color:var(--text-muted);margin:0 auto 32px;font-size:0.88rem;max-width:520px;line-height:1.9;" id="success-msg"></p>
+      <button class="btn-outline-gold me-3" onclick="resetForm()">New Reservation</button>
+      <button class="btn-gold" onclick="showPage('home')">Back to Home</button>
+    </div>
+
+    <footer>
+      <div class="footer-logo">THE VELVET ROOM</div>
+      <p>© 2025 The Velvet Room · All reservations are confirmed within 24 hours</p>
+    </footer>
+  </div>
+
+  <!-- ============================
+       PAGE 4: ADMIN DASHBOARD
+       ============================ -->
+  <div id="page-admin" class="page">
+    <div class="admin-header">
+      <div>
+        <div class="eyebrow">Admin Dashboard</div>
+        <div class="section-title">Reservation <em>Control</em></div>
+        <div class="gold-rule"></div>
+        <p style="color:var(--text-muted);font-size:0.8rem;">Click any cell to update its status</p>
+      </div>
+      <div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot available"></div> Available</div>
+          <div class="legend-item"><div class="legend-dot booked"></div> Booked</div>
+          <div class="legend-item"><div class="legend-dot maintenance"></div> Maintenance</div>
+        </div>
+        <button class="btn-outline-gold mt-3" style="font-size:0.7rem;padding:8px 20px;" onclick="adminLogout()">
+          <i class="bi bi-box-arrow-right me-2"></i>Logout
+        </button>
+      </div>
+    </div>
+
+    <div class="grid-section">
+      <div class="grid-wrap">
+        <table class="grid-tbl">
+          <thead><tr id="grid-header-row"></tr></thead>
+          <tbody id="grid-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bl-section">
+      <p style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:3px;color:var(--gold-dim);margin-bottom:20px;">ALL RESERVATIONS</p>
+      <div class="grid-wrap">
+        <table class="bl-tbl">
+          <thead>
+            <tr>
+              <th>ID</th><th>Guest</th><th>Date</th><th>Time</th>
+              <th>Pax</th><th>Suite</th><th>Menu</th><th>Status</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="bl-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-logo">THE VELVET ROOM</div>
+      <p>© 2025 The Velvet Room · Admin Panel · Authorized Personnel Only</p>
+    </footer>
+  </div>
+
+  <!-- Admin Login Overlay -->
+  <div class="admin-login-overlay" id="admin-login-overlay" style="display:none;">
+    <div class="admin-login-box">
+      <div class="eyebrow mb-3">Admin Access</div>
+      <div class="section-title" style="font-size:1.8rem;margin-bottom:30px;">Sign <em>In</em></div>
+      <div class="form-group mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" id="login-username" placeholder="admin" />
+      </div>
+      <div class="form-group mb-4">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="login-password" placeholder="••••••••" />
+      </div>
+      <button class="btn-gold" style="width:100%;padding:14px;" onclick="submitAdminLogin()">
+        Sign In
+      </button>
+      <button class="btn-outline-gold mt-3" style="width:100%;padding:12px;" onclick="showPage('home')">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <!-- Room Preview Modal -->
+  <div class="cell-modal" id="room-modal">
+    <div class="modal-box" style="max-width:580px;padding:0;overflow:hidden;">
+      <button class="modal-close" style="top:12px;right:16px;z-index:10;background:rgba(0,0,0,0.5);padding:4px 8px;" onclick="closeRoomModal()"><i class="bi bi-x-lg"></i></button>
+      <img id="room-modal-img" src="" alt="Room"
+        style="width:100%;height:260px;object-fit:cover;display:block;" />
+      <div style="padding:32px;">
+        <div class="eyebrow mb-1" id="room-modal-eyebrow"></div>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:8px;" id="room-modal-name"></h4>
+        <p style="color:var(--text-muted);font-size:0.82rem;line-height:1.9;margin-bottom:20px;" id="room-modal-desc"></p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;" id="room-modal-features"></div>
+        <button class="btn-gold" style="width:100%;padding:14px;" id="room-modal-select-btn">
+          <i class="bi bi-check2 me-2"></i>Select This Suite
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cell Modal -->
+  <div class="cell-modal" id="cell-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeCellModal()"><i class="bi bi-x-lg"></i></button>
+      <div class="eyebrow mb-2">Update Status</div>
+      <h5 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:4px;" id="modal-cell-title"></h5>
+      <p style="color:var(--text-muted);font-size:0.78rem;margin-bottom:24px;" id="modal-cell-sub"></p>
+      <button class="modal-btn m-avail" onclick="setCellStatus('available')"><i class="bi bi-check-circle me-2"></i>Set as Available</button>
+      <button class="modal-btn m-book"  onclick="setCellStatus('booked')"><i class="bi bi-x-circle me-2"></i>Set as Booked / Blocked</button>
+      <button class="modal-btn m-maint" onclick="setCellStatus('maintenance')"><i class="bi bi-tools me-2"></i>Set as Maintenance</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
