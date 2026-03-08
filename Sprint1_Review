@@ -1,0 +1,9 @@
+# Sprint 1 Review
+
+**Completed:**
+- Fully responsive frontend UI with CSS animations.
+- SQLite database populated with room and package data.
+- Basic reservation submission API is working.
+
+**Outcome:**
+Sprint 1 successfully delivered the customer-facing booking system.
