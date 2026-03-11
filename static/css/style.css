@@ -943,4 +943,37 @@ footer p { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 1.5px; 
   background: var(--border);
   flex-shrink: 0;
 }
-/* Final UI checks passed */
+
+/* ============================
+   TIME SLOT V2
+   ============================ */
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 16px;
+}
+
+.slot-time {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.slot-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.52rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.slot-dining .slot-tag { color: var(--gold-dim); }
+
+.slot-clear {
+  opacity: 0.35;
+  cursor: not-allowed !important;
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+.slot-clear .slot-tag { color: var(--text-muted); }
+.slot-clear:hover { border-color: rgba(255,255,255,0.06) !important; color: var(--text) !important; }
