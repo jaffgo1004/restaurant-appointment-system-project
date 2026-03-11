@@ -39,8 +39,8 @@
           From intimate anniversaries to high-stakes corporate affairs — every detail is curated to perfection.
         </p>
         <div class="hero-cta">
-          <button class="btn-gold" onclick="showPage('appointment')">Make a Reservation</button>
-          <button class="btn-outline-gold" onclick="showPage('themes')">View Tasting Menus</button>
+          <button class="btn-gold" onclick="showPage('appointment')">Make Reservation</button>
+          <button class="btn-outline-gold" onclick="showPage('themes')">View Menus</button>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -60,14 +60,9 @@
         </div>
       </div>
       <div class="hero-visual">
-  <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80"
-    alt="Fine Dining"
-    style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;opacity:0.4;" />
-  <div style="position:relative;z-index:2;text-align:center;padding:40px;">
-    <div class="logo-mark">V</div>
-    <p>PRIVATE FINE DINING</p>
-  </div>
-</div>
+        <div class="logo-mark">V</div>
+        <p>PRIVATE FINE DINING</p>
+      </div>
     </section>
 
     <section class="features-strip">
@@ -99,7 +94,7 @@
       <div class="row mb-5">
         <div class="col">
           <div class="eyebrow">Our Private Suites</div>
-          <div class="section-title">Two Rooms, <em>One Standard</em></div>
+          <div class="section-title">Two Private Realms. <em>Decide Your Atmosphere</em></div>
           <div class="gold-rule"></div>
         </div>
       </div>
@@ -398,18 +393,36 @@
               </div>
 
               <div class="form-group mb-4">
-                <label class="form-label">Preferred Time <span class="req">*</span></label>
+                <label class="form-label">Preferred Dining Session <span class="req">*</span></label>
                 <div class="slots" id="time-slots">
-                  <div class="slot" onclick="selectTime(this,'11:00 AM')">11:00 AM</div>
-                  <div class="slot" onclick="selectTime(this,'12:00 PM')">12:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'1:00 PM')">1:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'2:00 PM')">2:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'3:00 PM')">3:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'5:00 PM')">5:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'6:00 PM')">6:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'7:00 PM')">7:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'8:00 PM')">8:00 PM</div>
-                  <div class="slot" onclick="selectTime(this,'9:00 PM')">9:00 PM</div>
+                  <div class="slot slot-dining" onclick="selectTime(this,'11:00 AM')">
+                    <span class="slot-time">11:00 AM</span>
+                    <span class="slot-tag">3hr Dining</span>
+                  </div>
+                  <div class="slot slot-clear" title="Clearing Session">
+                    <span class="slot-time">2:00 PM</span>
+                    <span class="slot-tag">Clear</span>
+                  </div>
+                  <div class="slot slot-dining" onclick="selectTime(this,'3:00 PM')">
+                    <span class="slot-time">3:00 PM</span>
+                    <span class="slot-tag">3hr Dining</span>
+                  </div>
+                  <div class="slot slot-clear" title="Clearing Session">
+                    <span class="slot-time">6:00 PM</span>
+                    <span class="slot-tag">Clear</span>
+                  </div>
+                  <div class="slot slot-dining" onclick="selectTime(this,'7:00 PM')">
+                    <span class="slot-time">7:00 PM</span>
+                    <span class="slot-tag">3hr Dining</span>
+                  </div>
+                  <div class="slot slot-clear" title="Clearing Session">
+                    <span class="slot-time">10:00 PM</span>
+                    <span class="slot-tag">Clear</span>
+                  </div>
+                  <div class="slot slot-dining" onclick="selectTime(this,'11:00 PM')">
+                    <span class="slot-time">11:00 PM</span>
+                    <span class="slot-tag">3hr Dining</span>
+                  </div>
                 </div>
               </div>
 
@@ -434,8 +447,8 @@
               </div>
 
               <div class="form-sec-title">04 &nbsp; Tasting Menu Selection</div>
-              <div class="form-group mb-4">
-                <select class="form-select" id="f-theme">
+              <div class="form-group mb-3">
+                <select class="form-select" id="f-theme" onchange="showMenuDetail()">
                   <option value="">— Choose a tasting menu —</option>
                   <option value="The Executive Table|388">The Executive Table · RM 388/pax</option>
                   <option value="The Anniversary Menu|288">The Anniversary Menu · RM 288/pax</option>
@@ -444,6 +457,20 @@
                   <option value="The Prestige Tasting|688">The Prestige Tasting · RM 688/pax</option>
                   <option value="The Grand Brunch|248">The Grand Brunch · RM 248/pax</option>
                 </select>
+              </div>
+
+              <!-- Menu Detail Preview -->
+              <div id="menu-detail-preview" style="display:none;" class="mb-4">
+                <div style="background:var(--dark-3);border:1px solid var(--border);padding:20px;">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+                    <div>
+                      <div class="eyebrow" style="margin-bottom:4px;" id="md-eyebrow"></div>
+                      <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;" id="md-name"></div>
+                    </div>
+                    <div style="font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);" id="md-price"></div>
+                  </div>
+                  <div id="md-courses"></div>
+                </div>
               </div>
 
               <button class="btn-gold" style="width:100%;padding:16px;" onclick="submitBooking()">
