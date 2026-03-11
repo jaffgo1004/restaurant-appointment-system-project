@@ -8,7 +8,101 @@ let selectedRoomId = null;
 let currentCell = null;
 let isAdminLoggedIn = false;
 
-const TIME_SLOTS = ['11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM','9:00 PM'];
+const TIME_SLOTS = ['11:00 AM','2:00 PM','3:00 PM','6:00 PM','7:00 PM','10:00 PM','11:00 PM'];
+const CLEAR_SLOTS = ['2:00 PM','6:00 PM','10:00 PM'];
+
+const MENU_DETAILS = {
+  'The Executive Table': {
+    eyebrow: 'Menu 01 · Corporate Dinner',
+    price: 'RM 388/pax',
+    courses: [
+      { tag: 'Amuse-Bouche', dish: 'Truffle arancini, smoked salmon blini' },
+      { tag: 'Starter', dish: 'Foie gras terrine, brioche, fig compote' },
+      { tag: 'Soup', dish: 'Wild mushroom velouté, chive cream' },
+      { tag: 'Main', dish: 'Wagyu beef tenderloin, bordelaise sauce' },
+      { tag: 'Dessert', dish: 'Dark chocolate fondant, vanilla bean ice cream' },
+    ]
+  },
+  'The Anniversary Menu': {
+    eyebrow: 'Menu 02 · Romantic Dining',
+    price: 'RM 288/pax',
+    courses: [
+      { tag: 'Starter', dish: 'Burrata with heirloom tomatoes & basil oil' },
+      { tag: 'Soup', dish: 'Lobster bisque, brandy cream' },
+      { tag: 'Intermezzo', dish: 'Champagne sorbet' },
+      { tag: 'Main', dish: 'Pan-seared duck breast, cherry reduction' },
+      { tag: 'Dessert', dish: 'Strawberry pavlova, rose water cream' },
+    ]
+  },
+  'The Family Feast': {
+    eyebrow: 'Menu 03 · Family Gathering',
+    price: 'RM 218/pax',
+    courses: [
+      { tag: 'Shared Starter', dish: 'Charcuterie board, artisan breads' },
+      { tag: 'Soup', dish: 'French onion soup, gruyère crouton' },
+      { tag: 'Main', dish: 'Slow-roasted lamb shoulder, rosemary jus' },
+      { tag: 'Sides', dish: 'Roasted potatoes, honey-glazed carrots' },
+      { tag: 'Dessert', dish: 'Crème brûlée, almond tuile' },
+    ]
+  },
+  'The Celebration Dinner': {
+    eyebrow: 'Menu 04 · Birthday Dinner',
+    price: 'RM 318/pax',
+    courses: [
+      { tag: 'Canapés', dish: 'Selection of 3 chef\'s canapés' },
+      { tag: 'Starter', dish: 'King prawn cocktail, marie rose sauce' },
+      { tag: 'Main', dish: 'Black Angus ribeye, café de Paris butter' },
+      { tag: 'Sides', dish: 'Truffle fries, béarnaise, roasted asparagus' },
+      { tag: 'Dessert', dish: 'Personalized celebration cake (tableside)' },
+    ]
+  },
+  'The Prestige Tasting': {
+    eyebrow: 'Menu 05 · Chef\'s Prestige',
+    price: 'RM 688/pax',
+    courses: [
+      { tag: 'Amuse-Bouche', dish: '4 bites from the chef\'s kitchen' },
+      { tag: '1st Course', dish: 'Oscietra caviar, blinis, crème fraîche' },
+      { tag: '2nd Course', dish: 'Hokkaido scallop, cauliflower, hazelnut' },
+      { tag: '3rd Course', dish: 'Black truffle risotto, parmesan foam' },
+      { tag: 'Main', dish: 'A5 Wagyu striploin, seasonal garnish' },
+      { tag: 'Dessert', dish: 'Valrhona chocolate sphere, mango sorbet' },
+    ]
+  },
+  'The Grand Brunch': {
+    eyebrow: 'Menu 06 · Sunday Brunch',
+    price: 'RM 248/pax',
+    courses: [
+      { tag: 'Welcome', dish: 'Fresh-squeezed juice & pastry basket' },
+      { tag: 'Eggs Station', dish: 'Eggs Benedict, Florentine or Royale' },
+      { tag: 'Board', dish: 'Smoked salmon, gravlax, capers' },
+      { tag: 'Carving', dish: 'Slow-roasted beef, condiments' },
+      { tag: 'Dessert', dish: 'Mignardises & petits fours' },
+    ]
+  }
+};
+
+function showMenuDetail() {
+  const val = document.getElementById('f-theme').value;
+  const preview = document.getElementById('menu-detail-preview');
+
+  if (!val) { preview.style.display = 'none'; updateSummary(); return; }
+
+  const [name] = val.split('|');
+  const menu = MENU_DETAILS[name];
+  if (!menu) { preview.style.display = 'none'; updateSummary(); return; }
+
+  document.getElementById('md-eyebrow').textContent = menu.eyebrow;
+  document.getElementById('md-name').textContent = name;
+  document.getElementById('md-price').textContent = menu.price;
+  document.getElementById('md-courses').innerHTML = menu.courses.map(c => `
+    <div style="display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.78rem;">
+      <span style="font-family:'Cinzel',serif;font-size:0.55rem;letter-spacing:1.5px;color:var(--gold-dim);min-width:80px;text-transform:uppercase;">${c.tag}</span>
+      <span style="color:var(--text-muted);">${c.dish}</span>
+    </div>`).join('');
+
+  preview.style.display = 'block';
+  updateSummary();
+}
 
 /* ============================
    PAGE NAVIGATION
@@ -103,7 +197,10 @@ function renderRoomGrid() {
   const body = document.getElementById('grid-body');
   if (!hdr || !body) return;
 
-  hdr.innerHTML = '<th>Room / Time</th>' + TIME_SLOTS.map(t => `<th>${t}</th>`).join('');
+  hdr.innerHTML = '<th>Room / Time</th>' + TIME_SLOTS.map(t => {
+    const isClear = CLEAR_SLOTS.includes(t);
+    return `<th style="${isClear ? 'color:var(--text-muted);opacity:0.6;' : ''}">${t}${isClear ? '<br><span style="font-size:0.55rem;letter-spacing:1px;">CLEAR</span>' : '<br><span style="font-size:0.55rem;letter-spacing:1px;color:var(--gold-dim);">3HR</span>'}</th>`;
+  }).join('');
 
   const ROOMS = ['Room 1 · The Crimson Suite', 'Room 2 · The Pearl Alcove'];
   const icons  = { available:'bi-check-circle', booked:'bi-x-circle', maintenance:'bi-tools' };
@@ -111,6 +208,13 @@ function renderRoomGrid() {
 
   body.innerHTML = ROOMS.map(room => {
     const cells = TIME_SLOTS.map(time => {
+      const isClear = CLEAR_SLOTS.includes(time);
+      if (isClear) {
+        return `<td><div class="cell" style="background:rgba(255,255,255,0.03);cursor:default;opacity:0.5;">
+          <i class="bi bi-arrow-clockwise cell-icon" style="color:var(--text-muted);"></i>
+          <span class="cell-lbl" style="color:var(--text-muted);">Clear</span>
+        </div></td>`;
+      }
       const key = room + '|' + time;
       const s = window.gridData?.[key] || 'available';
       return `<td><div class="cell ${s}" onclick="openCellModal('${room}','${time}')">
