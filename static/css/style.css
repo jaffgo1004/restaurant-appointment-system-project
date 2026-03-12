@@ -239,7 +239,7 @@ body {
 
 .hero-visual {
   position: absolute;
-  right: 0; top: 75px; bottom: 0;
+  right: 0; top: 0; bottom: 0;
   width: 40%;
   border-left: 1px solid var(--border);
   display: flex;
@@ -251,6 +251,7 @@ body {
   background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80');
   background-size: cover;
   background-position: center;
+  z-index: 1;
 }
 
 .hero-visual::before {
