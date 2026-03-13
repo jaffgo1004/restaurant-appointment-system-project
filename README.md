@@ -168,7 +168,7 @@ Manual black-box testing across **12 test cases** covering all core system funct
 
 ## 📅 Agile Process (Scrum)
 
-Development was organised into **3 Scrum sprints** over 6 weeks, using a Kanban board to track progress across: **Backlog → In Progress → Review → Done**.
+Development was organised into **2 Scrum sprints** over 4 weeks, using a Kanban board to track progress across: **Backlog → In Progress → Review → Done**.
 
 > 📎 Full Product Backlog, User Stories, and Sprint Board snapshots are documented in [`Scrum_Documentation.pdf`](./Scrum_Documentation.pdf).
 
