@@ -1,7 +1,7 @@
 # Sprint 1 Review — The Velvet Room
 
-**Sprint Duration:** Week 1 
-**Date of Review:** End of Week 1
+**Sprint Duration:** Week 1     
+**Date of Review:** End of Week 1    
 **Scrum Master:** Lee Wen Xin  
 **Attendees:** Lee Wen Xin · Jaff Go · Ngoi Chang Zen · Lam Chuan Fong  
 **Sprint Goal:** Set up the core customer-facing UI, SQLite database schema, and basic reservation submission API.
