@@ -82,7 +82,7 @@ A web-based reservation system for **The Velvet Room**, a private fine dining re
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/LEEWXIN/restaurant-booking.git
+git clone https://github.com/jaffgo1004/restaurant-appointment-system-project.git
 cd restaurant-booking
 ```
 
