@@ -1,7 +1,7 @@
 # Sprint 2 Review — The Velvet Room
 
-**Sprint Duration:** Week 3 – Week 4  
-**Date of Review:** End of Week 4  
+**Sprint Duration:** Week 2 
+**Date of Review:** End of week 2
 **Scrum Master:** Lee Wen Xin  
 **Attendees:** Lee Wen Xin · Jaff Go · Ngoi Chang Zen · Lam Chuan Fong  
 **Sprint Goal:** Implement secure Admin dashboard with session authentication, room availability grid, and double-booking prevention.
