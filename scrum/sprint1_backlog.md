@@ -1,6 +1,6 @@
 # Sprint 1 Backlog — The Velvet Room
 
-**Sprint Duration:** Week 1
+**Sprint Duration:** Week 1  
 **Sprint Goal:** Set up the core customer-facing UI, SQLite database schema, and basic reservation submission API.  
 **Scrum Master:** Lee Wen Xin  
 **Team:** Lee Wen Xin · Jaff Go · Ngoi Chang Zen · Lam Chuan Fong
