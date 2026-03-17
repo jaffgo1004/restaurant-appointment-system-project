@@ -1,6 +1,6 @@
 # Sprint 2 Backlog — The Velvet Room
 
-**Sprint Duration:** Week 2
+**Sprint Duration:** Week 2   
 **Sprint Goal:** Implement secure Admin dashboard with session authentication, room availability grid, and double-booking prevention.  
 **Scrum Master:** Lee Wen Xin  
 **Team:** Lee Wen Xin · Jaff Go · Ngoi Chang Zen · Lam Chuan Fong
