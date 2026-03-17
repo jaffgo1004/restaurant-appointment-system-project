@@ -1,7 +1,7 @@
 # Sprint 2 Retrospective — The Velvet Room
 
-**Sprint Duration:** Week 2
-**Date of Retrospective:** End of Week 2
+**Sprint Duration:** Week 2  
+**Date of Retrospective:** End of Week 2   
 **Facilitator:** Lee Wen Xin (Scrum Master)  
 **Attendees:** Lee Wen Xin · Jaff Go · Ngoi Chang Zen · Lam Chuan Fong
 
